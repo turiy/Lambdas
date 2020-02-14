@@ -7,10 +7,21 @@ Resources:
     Properties:
       Handler: index.handler
       Runtime: nodejs10.x
-      CodeUri: ./
+      CodeUri: postvotes/
       Events:
         MyTimeApi:
           Type: Api
           Properties:
-            Path: /TimeResource
+            Path: /votes/{lang}
+            Method: GET
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs10.x
+      CodeUri: scanvotes/
+      Events:
+        MyTimeApi:
+          Type: Api
+          Properties:
+            Path: /votes
             Method: GET
