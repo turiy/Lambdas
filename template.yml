@@ -21,7 +21,7 @@ Resources:
       Runtime: nodejs10.x
       CodeUri: scanvotes/
       Events:
-        MyTimeApi:
+        VoteApi:
           Type: Api
           Properties:
             Path: /votes
