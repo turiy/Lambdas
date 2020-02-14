@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: Outputs the time
+Description: Two Lambdas for voting app
 Resources:
   PostVotesFunction:
     Type: AWS::Serverless::Function
@@ -13,7 +13,7 @@ Resources:
           Type: Api
           Properties:
             Path: /votes/{lang}
-            Method: GET
+            Method: PATCH
   ScanVotesFunction:
     Type: AWS::Serverless::Function
     Properties:
