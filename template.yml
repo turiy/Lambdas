@@ -2,18 +2,19 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: Outputs the time
 Resources:
-  TimeFunction:
+  PostVotesFunction:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
       Runtime: nodejs10.x
       CodeUri: postvotes/
       Events:
-        MyTimeApi:
+        VoteApi:
           Type: Api
           Properties:
             Path: /votes/{lang}
             Method: GET
+  ScanVotesFunction:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
